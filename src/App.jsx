@@ -9,9 +9,9 @@ const Sidebar = () => {
   const location = useLocation(); // Get current route
 
   const menuItems = [
-    { path: "/tasks", label: "Task Automation" },
-    { path: "/profile-questions", label: "Profile Questions" },
-    { path: "/independence-questions", label: "Independence Questions" },
+    { path: "/automtaion-test/tasks", label: "Task Automation" },
+    { path: "/automtaion-test/profile-questions", label: "Profile Questions" },
+    { path: "/automtaion-test/independence-questions", label: "Independence Questions" },
   ];
 
   return (
