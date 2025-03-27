@@ -72,10 +72,10 @@ function App() {
           }}
         >
           <Routes>
-            <Route path="/" element={<Navigate to="/tasks" replace />} />
-            <Route path="/tasks" element={<AutomationForTasks />} />
-            <Route path="/profile-questions" element={<ProfileQuestionAutomation />} />
-            <Route path="/independence-questions" element={<IndependenceFormAutomation />} />
+            <Route path="/" element={<Navigate to="/automtaion-test/tasks" replace />} />
+            <Route path="/automtaion-test/tasks" element={<AutomationForTasks />} />
+            <Route path="/automtaion-test/profile-questions" element={<ProfileQuestionAutomation />} />
+            <Route path="/automtaion-test/independence-questions" element={<IndependenceFormAutomation />} />
           </Routes>
         </div>
       </div>
