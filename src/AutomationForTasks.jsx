@@ -130,7 +130,7 @@ async function handOffTask(taskId, documentIds, engagementId, bearerToken) {
       preparerName: "Basit Zameer",
       reviewerId: 77,
       reviewerName: "Avery Joseph",
-      documentType: docId === 2653 ? 3 : 1,
+      documentType: docId === 11104 ? 3 : 1,
       current: true,
       createdBy: 72,
       isPreparer: true,
@@ -195,40 +195,7 @@ async function importDocuments(engagementId, taskIds, bearerToken, updateProgres
     "user-agent":
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
   };
-  let x = {
-    operationMode: "Save",
-    ImportFrom: "knowledgeBase",
-    documentName: "file-sample_1MB.doc",
-    engagementDocumentID: 4,
-    engagementID: 264,
-    taskID: 41359,
-    footPrint: "",
-    reason: "",
-    createdBy: 72,
-    isTemporary: false,
-    taskType: 0,
-    hasRevisions: true,
-    assignmentID: 0,
-    preparer: 0,
-    preparerName: "",
-    preparerInitial: "",
-    reviewer: 0,
-    reviewerName: "",
-    reviewerInitial: "",
-    isFileLocked: true,
-    lockedBy: 72,
-    lockedOn: "2024-06-23T11:40:04.4639072",
-    createdOn: "2024-06-23T11:40:04.4639072",
-    reviewerDate: "2024-06-23T11:40:04.4639072",
-    totalNotes: 0,
-    priorDays: 0,
-    previousAssignmentID: 0,
-    linkUrl: "/DaleelDocumentAttachments/1/1/594de196-d48a-4c50-8c8b-b5518d40807f_file-sample_1MB.doc",
-    isDefault: true,
-    isPrior: true,
-    isAttached: true,
-    isSubmitted: true,
-  };
+
   const basePayload = {
     operationMode: "Save",
     ImportFrom: "knowledgeBase",
@@ -276,7 +243,7 @@ async function importDocuments(engagementId, taskIds, bearerToken, updateProgres
       if (!importResponse.ok) throw new Error(`Import failed: ${importResponse.status}`);
       const importData = await importResponse.json();
 
-      const documentId = 2653; // Placeholder
+      const documentId = 11104; // Placeholder
       updateProgress(`Processing task ${i + 1}/${taskIds.length}: Assigning preparer`);
       await assignPreparer(documentId, engagementId, bearerToken);
 
@@ -284,7 +251,7 @@ async function importDocuments(engagementId, taskIds, bearerToken, updateProgres
       await assignReviewer(documentId, engagementId, bearerToken);
 
       updateProgress(`Processing task ${i + 1}/${taskIds.length}: Handing off task`);
-      await handOffTask(taskId, [2653, 3427], engagementId, bearerToken);
+      await handOffTask(taskId, [11104, 3427], engagementId, bearerToken);
 
       updateProgress(`Processing task ${i + 1}/${taskIds.length}: Saving task`);
       await saveTask(taskId, bearerToken);
