@@ -195,11 +195,45 @@ async function importDocuments(engagementId, taskIds, bearerToken, updateProgres
     "user-agent":
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
   };
+  let x = {
+    operationMode: "Save",
+    ImportFrom: "knowledgeBase",
+    documentName: "file-sample_1MB.doc",
+    engagementDocumentID: 4,
+    engagementID: 264,
+    taskID: 41359,
+    footPrint: "",
+    reason: "",
+    createdBy: 72,
+    isTemporary: false,
+    taskType: 0,
+    hasRevisions: true,
+    assignmentID: 0,
+    preparer: 0,
+    preparerName: "",
+    preparerInitial: "",
+    reviewer: 0,
+    reviewerName: "",
+    reviewerInitial: "",
+    isFileLocked: true,
+    lockedBy: 72,
+    lockedOn: "2024-06-23T11:40:04.4639072",
+    createdOn: "2024-06-23T11:40:04.4639072",
+    reviewerDate: "2024-06-23T11:40:04.4639072",
+    totalNotes: 0,
+    priorDays: 0,
+    previousAssignmentID: 0,
+    linkUrl: "/DaleelDocumentAttachments/1/1/594de196-d48a-4c50-8c8b-b5518d40807f_file-sample_1MB.doc",
+    isDefault: true,
+    isPrior: true,
+    isAttached: true,
+    isSubmitted: true,
+  };
   const basePayload = {
     operationMode: "Save",
-    ImportFrom: "Engagements",
-    documentName: "300GL(R)-A-Post EQR SS program-audits.docm",
-    engagementDocumentID: 3427,
+    ImportFrom: "knowledgeBase",
+    documentName: "file-sample_1MB.doc",
+    engagementDocumentID: 4,
     engagementID: engagementId,
     footPrint: "",
     reason: "",
@@ -216,13 +250,13 @@ async function importDocuments(engagementId, taskIds, bearerToken, updateProgres
     reviewerInitial: "",
     isFileLocked: true,
     lockedBy: 72,
-    lockedOn: "0001-01-01T00:00:00",
-    createdOn: "0001-01-01T00:00:00",
-    reviewerDate: "0001-01-01T00:00:00",
+    lockedOn: "2024-06-23T11:40:04.4639072",
+    createdOn: "2024-06-23T11:40:04.4639072",
+    reviewerDate: "2024-06-23T11:40:04.4639072",
     totalNotes: 0,
     priorDays: 0,
     previousAssignmentID: 0,
-    linkUrl: "",
+    linkUrl: "/DaleelDocumentAttachments/1/1/594de196-d48a-4c50-8c8b-b5518d40807f_file-sample_1MB.doc",
     isDefault: true,
     isPrior: true,
     isAttached: true,
@@ -297,9 +331,7 @@ const AutomationForTasks = () => {
       <h1 style={{ textAlign: "center", color: "#333" }}>Task Automation Dashboard</h1>
 
       <div style={{ marginBottom: "20px" }}>
-        <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>
-          Engagement ID:
-        </label>
+        <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>Engagement ID:</label>
         <input
           type="text"
           value={engagementId}
@@ -316,9 +348,7 @@ const AutomationForTasks = () => {
       </div>
 
       <div style={{ marginBottom: "20px" }}>
-        <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>
-          Bearer Token:
-        </label>
+        <label style={{ display: "block", marginBottom: "5px", fontWeight: "bold" }}>Bearer Token:</label>
         <textarea
           value={bearerToken}
           onChange={(e) => setBearerToken(e.target.value)}
@@ -354,12 +384,8 @@ const AutomationForTasks = () => {
 
       <div style={{ marginTop: "20px" }}>
         <h3 style={{ color: "#555" }}>Status</h3>
-        <p style={{ color: status === "Completed" ? "green" : status === "Failed" ? "red" : "#333" }}>
-          {status}
-        </p>
-        {progress && (
-          <p style={{ color: progress.includes("Error") ? "red" : "#666" }}>{progress}</p>
-        )}
+        <p style={{ color: status === "Completed" ? "green" : status === "Failed" ? "red" : "#333" }}>{status}</p>
+        {progress && <p style={{ color: progress.includes("Error") ? "red" : "#666" }}>{progress}</p>}
         {error && <p style={{ color: "red", fontStyle: "italic" }}>Error: {error}</p>}
       </div>
 
